@@ -1,20 +1,19 @@
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
-import 'package:jokee_single_serving/data/local_database/joke/joke.dart';
-import 'package:jokee_single_serving/data/local_database/user/user.dart';
-import 'package:jokee_single_serving/data/local_database/vote/vote.dart';
-import 'package:jokee_single_serving/domain/repositories/joke_repository.dart';
-import 'package:jokee_single_serving/domain/repositories/user_repository.dart';
-import 'package:jokee_single_serving/domain/usecases/generate_data_usecase.dart';
+import 'package:jokee_single_serving/data/data.dart';
+import 'package:jokee_single_serving/domain/domain.dart';
+import 'package:jokee_single_serving/presentation/controllers/controllers.dart';
 
 import 'package:realm/realm.dart';
 
 class DependencyCreator {
   void init() {
-    Get.put(_initialRealm());
-    Get.put(JokeRepository(Get.find()));
-    Get.put(UserRepository(Get.find()));
-    Get.put(GenerateDataUseCase(Get.find(), Get.find()));
+    Get.put(_initialRealm(), permanent: true);
+    Get.lazyPut(() => JokeRepository(Get.find()));
+    Get.lazyPut(() => UserRepository(Get.find()));
+    Get.lazyPut(() => VoteRepository(Get.find()));
+    Get.lazyPut(() => GenerateDataUseCase(Get.find(), Get.find()));
+    _bindingDependencies();
   }
 
   Realm _initialRealm() {
@@ -30,5 +29,9 @@ class DependencyCreator {
       print(config.path);
     }
     return Realm(config);
+  }
+
+  void _bindingDependencies() {
+    HomeBinding().dependencies();
   }
 }

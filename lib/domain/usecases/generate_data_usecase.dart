@@ -1,7 +1,4 @@
-import 'package:jokee_single_serving/data/local_database/joke/joke.dart';
-import 'package:jokee_single_serving/data/local_database/user/user.dart';
-import 'package:jokee_single_serving/domain/repositories/joke_repository.dart';
-import 'package:jokee_single_serving/domain/repositories/user_repository.dart';
+import 'package:jokee_single_serving/data/data.dart';
 
 class GenerateDataUseCase {
   GenerateDataUseCase(this._jokeRepository, this._userRepository);
