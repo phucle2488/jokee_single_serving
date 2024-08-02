@@ -40,11 +40,11 @@ class _HomePageState extends State<HomePage> {
             children: [
               Text(
                 'Handicrafted by',
-                style: TextStyle(color: AppColors.grayTextColor, fontSize: 11),
+                style: TextStyle(color: AppColors.grayTextColor, fontSize: 11, fontWeight: FontWeight.w500, wordSpacing: -0.2, letterSpacing: -0.1),
               ),
               Text(
                 'Jim HLS',
-                style: TextStyle(fontSize: 11),
+                style: TextStyle(fontSize: 11, color: AppColors.contentColor, fontWeight: FontWeight.w600, wordSpacing: -0.2, letterSpacing: -0.1),
               ),
             ],
           ),
@@ -81,12 +81,12 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Text(
                     'A joke a day keeps the doctor away',
-                    style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.w500, letterSpacing: 0),
+                    style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.w400, wordSpacing: -0.5, letterSpacing: -1),
                   ),
                   SizedBox(height: 24),
                   Text(
-                    'If you joke wrong way, your teach have to pay. (Serious)',
-                    style: TextStyle(fontSize: 14, color: Colors.white, fontWeight: FontWeight.w500, letterSpacing: 0),
+                    'If you joke wrong way, your teeth have to pay. (Serious)',
+                    style: TextStyle(fontSize: 13, color: Colors.white, fontWeight: FontWeight.w500, wordSpacing: -1.5, letterSpacing: -0.1),
                   ),
                 ],
               ),
@@ -97,11 +97,10 @@ class _HomePageState extends State<HomePage> {
                 child: Obx(() {
                   return Center(
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 24),
+                      padding: const EdgeInsets.symmetric(horizontal: 28),
                       child: Text(
                         _homeController.content.value,
-                        style: const TextStyle(fontSize: 16, letterSpacing: 0, height: 1.3),
-                        textAlign: TextAlign.justify,
+                        style: const TextStyle(fontSize: 15, height: 1.3, color: AppColors.contentColor, fontWeight: FontWeight.w500, wordSpacing: -1.5, letterSpacing: -0.1),
                       ),
                     ),
                   );
@@ -116,7 +115,7 @@ class _HomePageState extends State<HomePage> {
                       _homeController.onVote(isFun: true);
                     },
                     child: Container(
-                      margin: const EdgeInsets.only(left: 30, right: 20),
+                      margin: const EdgeInsets.only(left: 50, right: 20),
                       padding: const EdgeInsets.symmetric(vertical: 8),
                       color: AppColors.blue,
                       child: const Text(
@@ -133,7 +132,7 @@ class _HomePageState extends State<HomePage> {
                       _homeController.onVote(isFun: false);
                     },
                     child: Container(
-                      margin: const EdgeInsets.only(left: 20, right: 30),
+                      margin: const EdgeInsets.only(left: 20, right: 50),
                       padding: const EdgeInsets.symmetric(vertical: 8),
                       color: AppColors.green,
                       child: const Text(
@@ -149,20 +148,19 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 50),
             const Divider(),
             const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24),
+              padding: EdgeInsets.symmetric(horizontal: 16),
               child: Text(
-                'This app is created as part of Hisolutions program. The materials condo not onis welsing for orded or asalines no responsibing for the accuracy of any particular statement and accepts no liability for any loss or damage which may arise from reliance on the information contained on this site.',
-                style: TextStyle(fontSize: 12, color: AppColors.grayTextColor, letterSpacing: 0, height: 1),
+                'This appis created as part of Hlsolutions program. The materials contained on this website are provided for general information only and do not constitute any form of advice. HLS assumes no responsibility for the accuracy of any particular statement and accepts no liability for any loss or damage which may arise from reliance on the information contained on this site.',
+                style: TextStyle(fontSize: 12, color: AppColors.grayTextColor, height: 1.2, fontWeight: FontWeight.w600, wordSpacing: -0.2, letterSpacing: -0.1),
                 textAlign: TextAlign.center,
               ),
             ),
             const SizedBox(height: 12),
             const Text(
               'Copyright 2021 HLS',
-              style: TextStyle(fontSize: 13),
+              style: TextStyle(fontSize: 14, color: AppColors.contentColor, fontWeight: FontWeight.w500, wordSpacing: -0.2, letterSpacing: -0.1),
               textAlign: TextAlign.center,
             ),
-            const Divider(),
           ],
         ),
       ),
