@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:jokee_single_serving/data/data.dart';
-import 'package:jokee_single_serving/domain/entities/joke_data.dart';
+import 'package:jokee_single_serving/domain/domain.dart';
 import 'package:rxdart/rxdart.dart';
 
 class GetContentsUseCase {

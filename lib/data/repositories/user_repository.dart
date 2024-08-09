@@ -6,6 +6,6 @@ class UserRepository extends BaseRepository<Users> {
 
   @override
   Future<void> bulkInsert(List<Users> value) async {
-    await realm.writeAsync(() => realm.addAll(value, update: true));
+    // await realm.writeAsync(() => realm.addAll(value, update: true));
   }
 }

@@ -1,4 +1,5 @@
 import 'package:jokee_single_serving/data/data.dart';
+import 'package:jokee_single_serving/domain/domain.dart';
 
 class GenerateDataUseCase {
   GenerateDataUseCase(this._jokeRepository, this._userRepository);

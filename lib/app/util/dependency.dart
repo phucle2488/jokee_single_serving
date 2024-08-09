@@ -9,11 +9,15 @@ import 'package:realm/realm.dart';
 class DependencyCreator {
   void init() {
     Get.put(_initialRealm(), permanent: true);
-    Get.lazyPut(() => JokeRepository(Get.find()));
+    Get.lazyPut(() => implementJokeRepository());
     Get.lazyPut(() => UserRepository(Get.find()));
     Get.lazyPut(() => VoteRepository(Get.find()));
     Get.lazyPut(() => GenerateDataUseCase(Get.find(), Get.find()));
     _bindingDependencies();
+  }
+
+  JokeRepository implementJokeRepository() {
+    return JokeRepositoryImp(Get.find());
   }
 
   Realm _initialRealm() {
